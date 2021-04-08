@@ -38,7 +38,7 @@ jobs:
         id: tag_image
         run: |
           IMAGE_NAME=${{ steps.build_image.outputs.image_name }}
-          IMAGE_ID=ghcr.io/lfgsaito/$IMAGE_NAME
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
           echo IMAGE_ID=$IMAGE_ID
           echo ::set-output name=image_id::$IMAGE_ID
 
@@ -60,4 +60,3 @@ jobs:
         run: |
           [[ "${{ steps.tag_image.outputs.version }}" != "dev" ]] && docker push ${{ steps.tag_image.outputs.image_id }}:latest || true
           docker push ${{ steps.tag_image.outputs.image_id }}:${{ steps.tag_image.outputs.version }}
-          
