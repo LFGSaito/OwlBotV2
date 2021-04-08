@@ -60,5 +60,6 @@ class TexCog(commands.Cog):
             embed.set_image(url="attachment://tex.png")
             await ctx.send(file=discord.File(png_buffer, "tex.png"), embed=embed)
 
+
 def setup(bot: commands.Bot):
     bot.add_cog(TexCog(bot))
