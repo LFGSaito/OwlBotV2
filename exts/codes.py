@@ -55,5 +55,6 @@ class HamCog(commands.Cog):
         embed.colour = cmn.colours.good
         await ctx.send(embed=embed)
 
+
 def setup(bot: commands.Bot):
     bot.add_cog(HamCog(bot))
