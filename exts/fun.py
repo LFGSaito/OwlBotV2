@@ -15,8 +15,6 @@ import discord.ext.commands as commands
 
 import common as cmn
 
-import data.options as opt
-
 
 class FunCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
