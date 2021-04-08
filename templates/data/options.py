@@ -27,7 +27,7 @@ debug = False
 # A tuple of user IDs that should be considered "bot owners".
 # * Those users will have full control over the bot.
 # ! This MUST be a tuple of integers. Single element tuple: `(123,)`
-owners_uids = (200102491231092736, 564766093051166729)
+owners_uids = (195582200270290944)
 
 # The extensions to load when running the bot.
 exts = [
