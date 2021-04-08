@@ -8,7 +8,6 @@ This file is part of qrm2 and is released under the terms of
 the GNU General Public License, version 2.
 """
 
-
 import json
 
 import discord.ext.commands as commands
@@ -55,6 +54,7 @@ class HamCog(commands.Cog):
         embed.description = result.title()
         embed.colour = cmn.colours.good
         await ctx.send(embed=embed)
+
 
 def setup(bot: commands.Bot):
     bot.add_cog(HamCog(bot))
