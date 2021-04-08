@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-owlbot, a bot for Discord
+qrm, a bot for Discord
 ---
 Copyright (C) 2019-2021 classabbyamp, 0x5c
 
-This file is part of owlbot2 and is released under the terms of
+This file is part of qrm2 and is released under the terms of
 the GNU General Public License, version 2.
 """
 
@@ -65,11 +65,11 @@ bot = commands.Bot(command_prefix=opt.prefix,
                    connector=connector)
 
 # Simple way to access bot-wide stuff in extensions.
-bot.owlbot = SimpleNamespace()
+bot.qrm = SimpleNamespace()
 
 # Let's store stuff here.
-bot.owlbot.connector = connector
-bot.owlbot.debug_mode = debug_mode
+bot.qrm.connector = connector
+bot.qrm.debug_mode = debug_mode
 
 
 # --- Commands ---
@@ -209,7 +209,7 @@ async def on_command_error(ctx: commands.Context, err: commands.CommandError):
         print("Ignoring exception in command {}:".format(ctx.command), file=sys.stderr)
         traceback.print_exception(type(err), err, err.__traceback__, file=sys.stderr)
 
-        embed = cmn.error_embed_factory(ctx, err.original, bot.owlbot.debug_mode)
+        embed = cmn.error_embed_factory(ctx, err.original, bot.qrm.debug_mode)
         embed.description += f"\n`{type(err).__name__}`"
         await cmn.add_react(ctx.message, cmn.emojis.warning)
         await ctx.send(embed=embed)
@@ -279,7 +279,7 @@ resource_versions = {
         "latex_template": "v1",
     }
 
-bot.owlbot.rm = ResourcesManager(cmn.paths.resources, opt.resources_url, resource_versions)
+bot.qrm.rm = ResourcesManager(cmn.paths.resources, opt.resources_url, resource_versions)
 
 for ext in opt.exts:
     bot.load_extension(ext_dir + "." + ext)
@@ -294,19 +294,19 @@ try:
 
 except discord.LoginFailure as ex:
     # Miscellaneous authentications errors: borked token and co
-    if bot.owlbot.debug_mode:
+    if bot.qrm.debug_mode:
         raise
     raise SystemExit("Error: Failed to authenticate: {}".format(ex))
 
 except discord.ConnectionClosed as ex:
     # When the connection to the gateway (websocket) is closed
-    if bot.owlbot.debug_mode:
+    if bot.qrm.debug_mode:
         raise
     raise SystemExit("Error: Discord gateway connection closed: [Code {}] {}".format(ex.code, ex.reason))
 
 except ConnectionResetError as ex:
     # More generic connection reset error
-    if bot.owlbot.debug_mode:
+    if bot.qrm.debug_mode:
         raise
     raise SystemExit("ConnectionResetError: {}".format(ex))
 
