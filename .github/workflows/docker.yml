@@ -46,17 +46,10 @@ jobs:
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
           # Strip "v" prefix from tag name
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-          # if version is master, set version to dev
-          [[ "$VERSION" == "master" ]] && VERSION=dev
           echo VERSION=$VERSION
           echo ::set-output name=version::$VERSION
 
-          # tag dev or x.x.x
-          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
-          # tag latest if not a dev release
-          [[ "$VERSION" != "dev" ]] && docker tag $IMAGE_NAME $IMAGE_ID:latest || true
-
       - name: Push images to registry
         run: |
-          [[ "${{ steps.tag_image.outputs.version }}" != "dev" ]] && docker push ${{ steps.tag_image.outputs.image_id }}:latest || true
+          docker push ${{ steps.tag_image.outputs.image_id }}:latest || true
           docker push ${{ steps.tag_image.outputs.image_id }}:${{ steps.tag_image.outputs.version }}
