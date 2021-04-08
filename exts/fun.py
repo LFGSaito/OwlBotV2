@@ -41,14 +41,6 @@ class FunCog(commands.Cog):
         """Returns xkcd: Standards."""
         await ctx.send("http://xkcd.com/927")
 
-    @commands.command(name="worksplit", aliases=["split", "ft8"], category=cmn.Cats.FUN)
-    async def _worksplit(self, ctx: commands.Context):
-        """Posts "Work split you lids"."""
-        embed = cmn.embed_factory(ctx)
-        embed.title = "Work Split, You Lids!"
-        embed.set_image(url=opt.resources_url + self.imgs["worksplit"])
-        await ctx.send(embed=embed)
-
     @commands.command(name="xd", hidden=True, category=cmn.Cats.FUN)
     async def _xd(self, ctx: commands.Context):
         """ecks dee"""
