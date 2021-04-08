@@ -38,7 +38,7 @@ jobs:
         id: tag_image
         run: |
           IMAGE_NAME=${{ steps.build_image.outputs.image_name }}
-          IMAGE_ID=ghcr.io/lfgsaito/$IMAGE_NAME
+          IMAGE_ID=ghcr.io/saitohirga/$IMAGE_NAME
           echo IMAGE_ID=$IMAGE_ID
           echo ::set-output name=image_id::$IMAGE_ID
 
