@@ -16,9 +16,9 @@ class RatCog(commands.Cog):
 
 
 @commands.command(name="ratinthekitchen", aliases=["rat"], category=cmn.Cats.FUN)
-async def rat(command: str, message: discord.Message):
+async def rat(ctx: commands.Context):
     rats = f"No rats spotted in the caf as of today, if this changes DM Saito, time since last seen {diff}"
-    await message.channel.send(rats)
+    await ctx.send(rats)
     return
 
 
