@@ -3,8 +3,7 @@ Base extension for qrm
 ---
 Copyright (C) 2019-2021 classabbyamp, 0x5c
 
-This file is part of qrm2 and is released under the terms of
-the GNU General Public License, version 2.
+SPDX-License-Identifier: LiLiQ-Rplus-1.1
 """
 
 
@@ -169,6 +168,7 @@ class BaseCog(commands.Cog):
         self.donation_links = {
             "Ko-Fi": "https://ko-fi.com/miaowware",
             "LiberaPay": "https://liberapay.com/miaowware",
+            "GitHub Sponsors": "https://github.com/sponsors/classabbyamp",
         }
         self.bot_invite = ""
         if self.bot.user:
