@@ -1,4 +1,3 @@
-import discord
 import discord.ext.commands as commands
 import datetime
 import common as cmn
