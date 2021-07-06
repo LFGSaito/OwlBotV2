@@ -21,5 +21,5 @@ RUN \
         /root/.cache \
         /tmp/* \
         /var/lib/apt/lists/*
-
+ 
 CMD ["/bin/sh", "run.sh", "--pass-errors", "--no-botenv"]
