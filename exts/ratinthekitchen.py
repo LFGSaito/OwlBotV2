@@ -21,6 +21,6 @@ async def _rat(self, ctx: commands.Context):
     await ctx.send(str(rats))
     return
 
-    
+
 def setup(bot: commands.Bot):
     bot.add_cog(RatCog(bot))
