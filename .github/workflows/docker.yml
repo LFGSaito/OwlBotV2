@@ -64,3 +64,12 @@ jobs:
         run: |
           [[ "${{ steps.tag_image.outputs.version }}" != "dev" ]] && docker push ${{ steps.tag_image.outputs.image_id }}:latest || true
           docker push ${{ steps.tag_image.outputs.image_id }}:${{ steps.tag_image.outputs.version }}
+
+      - name: Deploy official images
+        id: deploy_images
+        uses: satak/webrequest-action@v1
+        with:
+          url: ${{ secrets.DEPLOY_URL }}
+          method: POST
+          headers: '{"Authentication": "Token ${{ secrets.DEPLOY_TOKEN }}"}'
+          payload: '{"version": "${{ steps.tag_image.outputs.version }}"}'
