@@ -15,12 +15,12 @@ class RatCog(commands.Cog):
 
 
 @commands.command(name="ratinthekitchen", aliases=["rat"], category=cmn.Cats.FUN)
-async def rat(ctx: commands.Context):
+async def _rat(self, ctx: commands.Context):
     """Checks for Rats"""
     rats = f"No rats spotted in the caf as of today, if this changes DM Saito, time since last seen {diff}"
-    await ctx.send(rats)
+    await ctx.send(str(rats))
     return
 
-
+    
 def setup(bot: commands.Bot):
     bot.add_cog(RatCog(bot))
