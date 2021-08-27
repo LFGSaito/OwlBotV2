@@ -5,8 +5,8 @@ WORKDIR /app
 
 ENV PYTHON_BIN python3
 
-COPY crontab /etc/cron.d/cool-task
-RUN chmod 0644 /etc/cron.d/cool-task
+COPY crontab /etc/cron.d/crontab
+RUN chmod 0644 /etc/cron.d/crontab
 RUN service cron start
 
 RUN \
