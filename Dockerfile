@@ -5,6 +5,10 @@ WORKDIR /app
 
 ENV PYTHON_BIN python3
 
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /run.sh /entrypoint.sh
+ENTRYPOINT /entrypoint.sh
+
 RUN \
     apt-get update && \
     echo "**** install runtime packages ****" && \
@@ -13,6 +17,7 @@ RUN \
         libjpeg62-turbo \
         libxml2-dev \
         libxslt-dev \
+        cron \
         && \
     echo "**** install pip packages ****" && \
     pip3 install -U pip setuptools wheel && \
