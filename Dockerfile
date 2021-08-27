@@ -5,9 +5,9 @@ WORKDIR /app
 
 ENV PYTHON_BIN python3
 
-ADD entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT /entrypoint.sh
+COPY crontab /etc/cron.d/cool-task
+RUN chmod 0644 /etc/cron.d/cool-task
+RUN service cron start
 
 RUN \
     apt-get update && \
