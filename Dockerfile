@@ -5,10 +5,6 @@ WORKDIR /app
 
 ENV PYTHON_BIN python3
 
-COPY crontab /etc/cron.d/cool-task
-RUN chmod 0644 /etc/cron.d/cool-task
-RUN service cron start
-
 RUN \
     apt-get update && \
     echo "**** install runtime packages ****" && \
