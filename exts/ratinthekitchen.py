@@ -13,13 +13,14 @@ class RatCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
+    @commands.command(name="ratinthekitchen", aliases=["rat"], category=cmn.Cats.FUN)
+    async def _rat(self, ctx: commands.Context):
+        """Checks for Rats"""
+        rats = f"No rats spotted in the caf as of today, if this changes DM Saito, time since last seen {diff}"
+        await ctx.send(str(rats))
+        return
 
-@commands.command(name="ratinthekitchen", aliases=["rat"], category=cmn.Cats.FUN)
-async def _rat(self, ctx: commands.Context):
-    """Checks for Rats"""
-    rats = f"No rats spotted in the caf as of today, if this changes DM Saito, time since last seen {diff}"
-    await ctx.send(str(rats))
-    return
+
 
 
 def setup(bot: commands.Bot):
