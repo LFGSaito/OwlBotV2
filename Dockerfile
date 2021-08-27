@@ -6,7 +6,7 @@ WORKDIR /app
 ENV PYTHON_BIN python3
 
 ADD entrypoint.sh /entrypoint.sh
-RUN chmod +x /run.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
 
 RUN \
