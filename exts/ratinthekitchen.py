@@ -21,7 +21,5 @@ class RatCog(commands.Cog):
         return
 
 
-
-
 def setup(bot: commands.Bot):
     bot.add_cog(RatCog(bot))
