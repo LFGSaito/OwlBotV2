@@ -13,15 +13,21 @@ class MenuCog(commands.Cog):
         menu0 = breakfast['periods']['categories'][0]['items'][0]['name']
         await ctx.send(menu0)
         return
-   
+    
     @commands.command(name="cafmenu lunch", aliases=["caf l"], category=cmn.Cats.LOOKUP)
     async def _CafL(self, ctx: commands.Context):
-        await ctx.send(str(rats))
+        breakfast = open('data/Breakfast.json')
+        json.load(breakfast)
+        menu0 = breakfast['periods']['categories'][0]['items'][0]['name']
+        await ctx.send(menu0)
         return
-
+    
     @commands.command(name="cafmenu dinner", aliases=["caf d"], category=cmn.Cats.LOOKUP)
     async def _CafD(self, ctx: commands.Context):
-        await ctx.send(str(rats))
+        breakfast = open('data/Breakfast.json')
+        json.load(breakfast)
+        menu0 = breakfast['periods']['categories'][0]['items'][0]['name']
+        await ctx.send(menu0)
         return
 
 def setup(bot: commands.Bot):
