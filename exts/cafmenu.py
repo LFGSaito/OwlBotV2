@@ -7,7 +7,7 @@ class MenuCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
-    @commands.command(name="cafmenu breakfast", aliases=["caf b"], category=cmn.Cats.LOOKUP)
+    @commands.command(name="cafbreakfast", aliases=["cafb"], category=cmn.Cats.LOOKUP)
     async def _CafB(self, ctx: commands.Context):
         """Looks up the Caf's Breakfast menu"""
         breakfast = open('data/Breakfast.json')
@@ -16,7 +16,7 @@ class MenuCog(commands.Cog):
         await ctx.send(menu0)
         return
 
-    @commands.command(name="cafmenu lunch", aliases=["caf l"], category=cmn.Cats.LOOKUP)
+    @commands.command(name="caflunch", aliases=["cafl"], category=cmn.Cats.LOOKUP)
     async def _CafL(self, ctx: commands.Context):
         """Looks up the Caf's Lunch menu"""
         Lunch = open('data/Lunch.json')
@@ -25,7 +25,7 @@ class MenuCog(commands.Cog):
         await ctx.send(menu0)
         return
 
-    @commands.command(name="cafmenu dinner", aliases=["caf d"], category=cmn.Cats.LOOKUP)
+    @commands.command(name="cafmenudinner", aliases=["cafd"], category=cmn.Cats.LOOKUP)
     async def _CafD(self, ctx: commands.Context):
         """Looks up the Caf's Dinner menu"""
         Dinner = open('data/Dinner.json')
