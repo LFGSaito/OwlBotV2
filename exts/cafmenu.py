@@ -2,6 +2,7 @@ import discord.ext.commands as commands
 import common as cmn
 import json
 
+
 class MenuCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
@@ -13,7 +14,7 @@ class MenuCog(commands.Cog):
         menu0 = breakfast['periods']['categories'][0]['items'][0]['name']
         await ctx.send(menu0)
         return
-    
+
     @commands.command(name="cafmenu lunch", aliases=["caf l"], category=cmn.Cats.LOOKUP)
     async def _CafL(self, ctx: commands.Context):
         breakfast = open('data/Breakfast.json')
@@ -21,7 +22,7 @@ class MenuCog(commands.Cog):
         menu0 = breakfast['periods']['categories'][0]['items'][0]['name']
         await ctx.send(menu0)
         return
-    
+
     @commands.command(name="cafmenu dinner", aliases=["caf d"], category=cmn.Cats.LOOKUP)
     async def _CafD(self, ctx: commands.Context):
         breakfast = open('data/Breakfast.json')
@@ -29,6 +30,7 @@ class MenuCog(commands.Cog):
         menu0 = breakfast['periods']['categories'][0]['items'][0]['name']
         await ctx.send(menu0)
         return
+
 
 def setup(bot: commands.Bot):
     bot.add_cog(MenuCog(bot))
