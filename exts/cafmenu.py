@@ -9,6 +9,7 @@ class MenuCog(commands.Cog):
 
     @commands.command(name="cafmenu breakfast", aliases=["caf b"], category=cmn.Cats.LOOKUP)
     async def _CafB(self, ctx: commands.Context):
+        """Looks up the Caf's Breakfast menu"""
         breakfast = open('data/Breakfast.json')
         json.load(breakfast)
         menu0 = breakfast['periods']['categories'][0]['items'][0]['name']
@@ -17,17 +18,19 @@ class MenuCog(commands.Cog):
 
     @commands.command(name="cafmenu lunch", aliases=["caf l"], category=cmn.Cats.LOOKUP)
     async def _CafL(self, ctx: commands.Context):
-        breakfast = open('data/Breakfast.json')
-        json.load(breakfast)
-        menu0 = breakfast['periods']['categories'][0]['items'][0]['name']
+        """Looks up the Caf's Lunch menu"""
+        Lunch = open('data/Lunch.json')
+        json.load(Lunch)
+        menu0 = Lunch['periods']['categories'][0]['items'][0]['name']
         await ctx.send(menu0)
         return
 
     @commands.command(name="cafmenu dinner", aliases=["caf d"], category=cmn.Cats.LOOKUP)
     async def _CafD(self, ctx: commands.Context):
-        breakfast = open('data/Breakfast.json')
-        json.load(breakfast)
-        menu0 = breakfast['periods']['categories'][0]['items'][0]['name']
+        """Looks up the Caf's Dinner menu"""
+        Dinner = open('data/Dinner.json')
+        json.load(Dinner)
+        menu0 = Dinner['periods']['categories'][0]['items'][0]['name']
         await ctx.send(menu0)
         return
 
