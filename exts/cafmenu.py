@@ -12,6 +12,7 @@ class MenuCog(commands.Cog):
         """Looks up the Caf's Breakfast menu"""
         Breakfastj = open('data/Breakfast.json')
         Breakfastd = json.load(Breakfastj)
+        print(Breakfastd)
         menu0 = Breakfastd['periods']['categories'][0]['items'][0]['name']
         await ctx.send(menu0)
         return
