@@ -10,7 +10,7 @@ class MenuCog(commands.Cog):
     @commands.command(name="cafbreakfast", aliases=["cafb"], category=cmn.Cats.LOOKUP)
     async def _CafB(self, ctx: commands.Context):
         """Looks up the Caf's Breakfast menu"""
-        Breakfastj = open('data/Breakfast.json') 
+        Breakfastj = open('data/Breakfast.json')
         Breakfastd = json.load(Breakfastj)
         menu0 = Breakfastd['periods']['categories'][0]['items'][0]['name']
         await ctx.send(menu0)
