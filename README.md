@@ -1,10 +1,8 @@
-# qrm, a Bot for Discord
+# Owl Bot, a Bot for FAU Discords
 
-[![Discord](https://discordapp.com/api/guilds/656888365886734340/widget.png?style=shield)](https://discord.gg/SwyjdDN)
+A discord bot with FAU related functionalities.
 
-A discord bot with ham radio functionalities.
-
-An independent rewrite of qrmbot-discord.
+Based upon QRM2.
 
 ## Running
 
