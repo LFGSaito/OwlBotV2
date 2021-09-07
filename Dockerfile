@@ -13,10 +13,9 @@ RUN \
         libjpeg62-turbo \
         libxml2-dev \
         libxslt-dev \
-        ntp \
+        ntpdate \
         && \
     echo "**** install pip packages ****" && \
-    date -R \
     pip3 install -U pip setuptools wheel && \
     pip3 install -r requirements.txt && \
     echo "**** clean up ****" && \
