@@ -13,7 +13,7 @@ RUN \
         libjpeg62-turbo \
         libxml2-dev \
         libxslt-dev \
-        ntpd \
+        ntp \
         && \
     echo "**** install pip packages ****" && \
     pip3 install -U pip setuptools wheel && \
