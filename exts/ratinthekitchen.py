@@ -3,8 +3,8 @@ import datetime
 import common as cmn
 import time
 
-present = datetime.datetime.now()
-future = datetime.datetime(2019, 11, 18, 12, 25, 34)
+future = datetime.datetime.now()
+present = datetime.datetime(2019, 11, 18, 12, 25, 34)
 difference = future - present
 
 class RatCog(commands.Cog):
