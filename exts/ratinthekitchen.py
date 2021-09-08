@@ -3,9 +3,7 @@ import datetime
 import common as cmn
 import time
 
-future = datetime.datetime.now()
-present = datetime.datetime(2019, 11, 18, 12, 25, 34)
-difference = future - present
+difference = "TBD"
 
 class RatCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
