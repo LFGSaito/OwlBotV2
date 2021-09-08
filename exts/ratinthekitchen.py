@@ -3,11 +3,9 @@ import datetime
 import common as cmn
 import time
 
-datetimeFormat = '%Y-%m-%d %H:%M:%S'
-date2 = '2019-11-18 12:25:34'
-date1 = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
-diff = datetime.datetime.strptime(date1, datetimeFormat) - datetime.datetime.strptime(date2, datetimeFormat)
-
+present = datetime.datetime.now()
+future = datetime.datetime(2019, 11, 18, 12, 25, 34)
+difference = future - present
 
 class RatCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
@@ -16,7 +14,7 @@ class RatCog(commands.Cog):
     @commands.command(name="ratinthekitchen", aliases=["rat"], category=cmn.Cats.FUN)
     async def _rat(self, ctx: commands.Context):
         """Checks for Rats"""
-        rats = f"No rats spotted in the caf as of today, if this changes DM Saito, time since last seen {diff}"
+        rats = f"No rats spotted in the caf as of today, if this changes DM Saito, time since last seen {difference}"
         await ctx.send(str(rats))
         return
 
