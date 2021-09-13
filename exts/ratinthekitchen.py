@@ -17,7 +17,8 @@ class RatCog(commands.Cog):
     async def _rat(self, ctx: commands.Context):
         """Checks for Rats"""
         rats = f"No rats spotted in the caf as of today, if this changes DM Saito, time since last seen {diff}"
-        await ctx.send("DateTime Format is" + datetimeFormat + "Date2 is" + date2 + "date 1 is" + date1 + "and Diff is" + diff + rats)
+        await ctx.send("DateTime Format is" + str(datetimeFormat) + "Date2 is" + str(date2) + "date 1 is" + 
+        str(date1) + "and Diff is" + str(diff) + str(rats))
         return
 
 
