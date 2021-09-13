@@ -3,8 +3,8 @@ import datetime
 import common as cmn
 import time
 
-datetimeFormat = '%Y-%m-%d %H:%M:%S'
-date2 = '2019-11-18 12:25:34'
+datetimeFormat = '%Y %m %d %H:%M:%S'
+date2 = '2019 11 18 12:25:34'
 date1 = time.strftime("%Y %m %d %H:%M:%S", time.gmtime())
 diff = datetime.datetime.strptime(date1, datetimeFormat) - datetime.datetime.strptime(date2, datetimeFormat)
 
