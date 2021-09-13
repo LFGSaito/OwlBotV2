@@ -5,7 +5,7 @@ import time
 
 datetimeFormat = '%Y-%m-%d %H:%M:%S'
 date2 = '2019-11-18 12:25:34'
-date1 = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+date1 = time.strftime("%Y %m %d %H:%M:%S", time.gmtime())
 diff = datetime.datetime.strptime(date1, datetimeFormat) - datetime.datetime.strptime(date2, datetimeFormat)
 
 
@@ -17,7 +17,7 @@ class RatCog(commands.Cog):
     async def _rat(self, ctx: commands.Context):
         """Checks for Rats"""
         rats = f"No rats spotted in the caf as of today, if this changes DM Saito, time since last seen {diff}"
-        await ctx.send("DateTime Format is" + str(datetimeFormat) + "Date2 is" + str(date2) + "date 1 is" + str(date1) + "and Diff is" + str(diff) + str(rats))
+        await ctx.send(str(rats))
         return
 
 
