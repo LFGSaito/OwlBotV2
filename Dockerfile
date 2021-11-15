@@ -13,7 +13,7 @@ RUN \
     echo "**** update system ****" && \
     xbps-install -SuyM -R ${REPOSITORY} && \
     echo "**** install system packages ****" && \
-    xbps-install -yM -R ${REPOSITORY} ${PKGS} python3 python3-pip Chrony && \
+    xbps-install -yM -R ${REPOSITORY} ${PKGS} python3 python3-pip ntp && \
     echo "**** install pip packages ****" && \
     pip3 install -U pip setuptools wheel && \
     pip3 install -r requirements.txt && \
